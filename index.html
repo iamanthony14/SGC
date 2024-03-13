@@ -2,122 +2,204 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Transparent Navbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap 5.3 Navbar Example</title>
+    <!-- Bootstrap CSS -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet" />
+
     <style>
-      body {
-        background-image: url("img/4.png"); /* Specify your background image path */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Disable scrolling */
       }
-      .navbar {
-        background-color: transparent;
-      }
-      .navbar-brand img {
-        height: 200px; /* Adjust the height of your logo */
-      }
-      .navbar-nav .nav-item .nav-link {
-        font-weight: bold;
-        font-size: 1.6rem;
-        color: red; /* Change color to red */
-      }
-      h1 {
+      p {
         text-align: center;
         color: white;
-        font-size: 4.5rem;
+        font-size: 3rem;
+        font-weight: 600;
+        width: 55%;
       }
-      .herotitle {
-        text-align: center;
-        padding: 0 15%;
-      }
-      .herotext {
+      .section {
+        height: 100vh;
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        background-size: cover;
+        background-position: center;
       }
-      .topbar{
-        background-color: rgb(0,191,99) !important;
-        text-align: right;
-        padding-top: 15px;
-        padding-bottom: 1px;
+
+      /* Different background images for each section */
+      #home {
+        background-image: url("img/4.png");
+      }
+      #about {
+        background-image: url("img/3.png");
+      }
+      #mission {
+        background-image: url("img/2.png");
+      }
+      #products {
+        background-image: url("img/1.png");
+      }
+      #contact {
+        background-image: url("img/4.png");
+      }
+
+      /* Custom class to make navbar transparent */
+      .navbar-transparent {
+        background-color: transparent !important;
+      }
+
+      /* Custom styles for navbar links */
+      .navbar-nav .nav-link {
+        color: red;
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
+      .top-bar {
+        background-color: rgb(0, 191, 99);
+        height: 50px;
+        display: flex;
+        justify-content: flex-end; /* Align left */
+        align-items: center;
+        padding: 0 20px;
+        color: white;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        font-size: 1.2rem;
+      }
+      .top-bar div {
+        margin-right: 20px; /* Add some spacing between items */
+      }
+      .mylogo {
+        position: fixed;
+        width: 20%;
+        top: 10%;
+        left: 5%;
+      }
+      .hiddenlogo {
+        display: none;
+      }
+      @media screen and (max-width: 992px) {
+        .mylogo {
+          visibility: hidden;
+        }
+        .hiddenlogo {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+        .section {
+          position: relative; /* Ensure proper positioning of the section */
+          display: flex;
+          flex-direction: column;
+          align-items: center; /* Center items vertically */
+        }
+        .logo-container {
+          margin-bottom: 20px; /* Adjust as necessary to create space between logo and paragraph */
+          position: relative;
+          width: 100%;
+          height: auto;
+        }
+        
+      }
+      @media screen and (max-width: 850px) {
+        p{
+          font-size: 2rem;
+        }
+      }
+      .navbar-toggler{
+        background-color: rgb(189 189 189 / 66%);
       }
     </style>
   </head>
   <body>
-    <div class="container-fluid topbar">
-        <p style="color: white;"><b>30th Floor, RCBC Plaza Tower 1, 6819 Ayala Ave, Makati, 1209 Metro Manila 02-8425-4742 admin@sgc.com</b></p>
-    </div>
-    <nav class="navbar navbar-expand-lg ">
-      <div class="container">
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarTogglerDemo02"
-        >
-          <ul class="navbar-nav mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">ABOUT US</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">MISSION</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">PRODUCTS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">CONTACT US</a>
-            </li>
-            
-          </ul>
-          
-          </form>
+    <div class="fixed-top">
+      <div class="top-bar">
+        <div>
+          <i class="fas fa-map-marker-alt"></i> 30th Floor, RCBC Plaza Tower 1,
+          6819 Ayala Ave, Makati, 1209 Metro Manila
         </div>
+        <div><i class="fas fa-phone"></i> 02-8425-4742</div>
+        <div><i class="fas fa-envelope"></i> admin@sgc.com</div>
       </div>
-    </nav>
-    
-    <div class="container-fluid">
-      <div>
-        <img src="img/logo.png" style="width: 20%" alt="" />
-      </div>
-      <div class="row herotitle">
-        <div class="col">
-          <h1>
-            A BETTER FUTURE IS ON THE HORIZON FOR MEDICAL TOOLS AND EQUIPMENTS
-          </h1>
+      <nav
+        style="padding-top: 60px"
+        class="navbar navbar-expand-lg navbar-light navbar-transparent">
+        <div class="container">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <!-- Added ms-auto class here -->
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#mission">Mission</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#products">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Us</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+      </nav>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    <div class="row">
+      <img src="img/SGC logo.png" class="img-fluid mylogo" alt="" />
+    </div>
+
+    <!-- Five Sections with 100vh Height -->
+    <section id="home" class="section">
+      <!-- <div class="logo-container">
+        <img class="hiddenlogo" src="img/SGC logo.png" alt="" />
+      </div> --><img style="width: 250px;" class="hiddenlogo" src="img/SGC logo.png" alt="" />
+      <p>A BETTER FUTURE IS ON THE HORIZON FOR MEDICAL TOOLS AND EQUIPMENTS</p>
+    </section>
+    <section id="about" class="section">Section 2</section>
+    <section id="mission" class="section">Section 3</section>
+    <section id="products" class="section">Section 4</section>
+    <section id="contact" class="section">Section 5</section>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Smooth scrolling for navbar links
+      document
+        .querySelectorAll('.navbar-nav a[href^="#"]')
+        .forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+              behavior: "smooth",
+            });
+          });
+        });
+    </script>
   </body>
 </html>
