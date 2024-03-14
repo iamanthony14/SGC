@@ -34,18 +34,9 @@
         font-size: 2rem;
         background-size: cover;
         background-position: center;
-        position: relative;
+        position: relative; /* Ensure relative positioning */
       }
-      .btn-arrow {
-        position: absolute;
-        bottom: 20px;
-        cursor: pointer;
-        font-size: 3rem;
-        color: red;
-        z-index: 999; /* Ensure it's above other content */
-        border: none;
-        background-color: transparent;
-      }
+
       /* Different background images for each section */
       #home {
         background-image: url("img/4.png");
@@ -95,7 +86,6 @@
         width: 20%;
         top: 10%;
         left: 5%;
-        z-index: 1000;
       }
       .hiddenlogo {
         display: none;
@@ -128,23 +118,20 @@
           font-size: 2rem;
         }
       }
-      @media screen and (max-width: 400px) {
-        
-        .hiddenlogo {
-          display: block;
-          width: 10px;
-          text-align: center;
-        }
-        p{
-          font-size: 1.3rem;
-        }
-      }
       .navbar-toggler{
         background-color: rgb(189 189 189 / 66%);
       }
-      .clickbot{
-        font-size: 15px;
-        width: 100%;
+
+      /* Button arrow styling */
+      .btn-arrow {
+        position: absolute;
+        bottom: 20px;
+        cursor: pointer;
+        font-size: 2rem;
+        color: white;
+        z-index: 999; /* Ensure it's above other content */
+        background-color: transparent;
+        border: none;
       }
     </style>
   </head>
@@ -195,9 +182,9 @@
         </div>
       </nav>
     </div>
-    
+    <div class="row">
       <img src="img/SGC logo.png" class="img-fluid mylogo" alt="" />
-    
+    </div>
 
     <!-- Five Sections with 100vh Height -->
     <section id="home" class="section">
@@ -206,29 +193,25 @@
       </div> --><img style="width: 250px;" class="hiddenlogo" src="img/SGC logo.png" alt="" />
       <p>A BETTER FUTURE IS ON THE HORIZON FOR MEDICAL TOOLS AND EQUIPMENTS</p>
       <button class="btn-arrow" onclick="scrollToNextSection('#about')">
-        <i class="fas fa-chevron-down"></i>
-        <p class="clickbot">Click Here for More</p>
+        <i class="fas fa-arrow-down"></i>
       </button>
     </section>
-    <section id="about" class="section">Section 2
+    <section id="about" class="section">
       <button class="btn-arrow" onclick="scrollToNextSection('#mission')">
-        <i class="fas fa-chevron-down"></i>
-        <p class="clickbot">Click Here for More</p>
+        <i class="fas fa-arrow-down"></i>
       </button>
     </section>
-    <section id="mission" class="section">Section 3
+    <section id="mission" class="section">
       <button class="btn-arrow" onclick="scrollToNextSection('#products')">
-        <i class="fas fa-chevron-down"></i>
-        <p class="clickbot">Click Here for More</p>
+        <i class="fas fa-arrow-down"></i>
       </button>
     </section>
-    <section id="products" class="section">Section 4
+    <section id="products" class="section">
       <button class="btn-arrow" onclick="scrollToNextSection('#contact')">
-        <i class="fas fa-chevron-down"></i>
-        <p class="clickbot">Click Here for More</p>
+        <i class="fas fa-arrow-down"></i>
       </button>
     </section>
-    <section id="contact" class="section">Section 5</section>
+    <section id="contact" class="section"></section>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
@@ -246,7 +229,7 @@
           });
         });
 
-        // Function to scroll to the next section
+      // Function to scroll to the next section
       function scrollToNextSection(sectionId) {
         const nextSection = document.querySelector(sectionId);
         if (nextSection) {
