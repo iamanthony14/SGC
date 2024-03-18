@@ -73,10 +73,10 @@
         background-image: url("img/2.png");
       }
       #products {
-        background-image: url("img/1.png");
+        background-image: url("img/4.png");
       }
       #contact {
-        background-image: url("img/4.png");
+        background-image: url("img/1.png");
       }
 
       /* Custom class to make navbar transparent */
@@ -116,6 +116,63 @@
       .hiddenlogo {
         display: none;
       }
+      
+      .navbar-toggler {
+        background-color: rgb(189 189 189 / 66%);
+      }
+      .clickbot {
+        font-size: 15px;
+        width: 100%;
+      }
+      .aboutus {
+        color: green;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        font-weight: 700;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      .aboutus2 {
+        color: green;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        font-weight: 700;
+       
+      }
+      .greendiv {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 191, 99, 0.3);
+        padding: 5px 0;
+      }
+      .aboutuscontent {
+        font-size: 1.5rem;
+        text-align: center;
+        text-shadow: 1px 0.5px 4px black;
+      }
+      .greendiv2 {
+        width: 100%;
+        font-size: 2.2rem;
+        color: white;
+        background-color: rgba(0, 191, 99, 0.3);
+        padding: 5px 0;
+        text-shadow: 1px 0.5px 4px black;
+        font-weight: 500;
+      }
+      .contactuscontent {
+        font-size: 2rem;
+        text-align: center;
+        text-shadow: 1px 0.5px 4px black;
+      }
+      .producttext{
+        color: green;
+        font-size: 1.7rem;
+        text-shadow: 1px 0.5px 4px black;
+        width: 100%;
+        white-space: nowrap;
+      }
       @media screen and (max-width: 992px) {
         .mylogo {
           visibility: hidden;
@@ -142,6 +199,49 @@
         p {
           font-size: 2rem;
         }
+        .aboutuscontent {
+        font-size: 1rem;
+        text-align: center;
+        text-shadow: 1px 0.5px 4px black;
+      }
+      }
+      @media screen and (max-width: 640px) {
+        .top-bar {
+          background-color: rgb(0, 191, 99);
+          height: 50px;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          padding: 0 20px;
+          color: white;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          font-size: 0.7rem;
+          white-space: normal;
+        }
+        .aboutuscontent {
+        font-size: 0.6rem;
+        text-align: center;
+        text-shadow: 1px 0.5px 4px black;
+      }
+      }
+      @media screen and (max-width: 440px) {
+        .top-bar {
+          background-color: rgb(0, 191, 99);
+          height: 70px;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          padding: 0 20px;
+          color: white;
+          position: fixed;
+          top: 0;
+          width: 100%;
+          font-size: 0.7rem;
+          white-space: normal;
+        }
+        
       }
       @media screen and (max-width: 400px) {
         .hiddenlogo {
@@ -152,32 +252,8 @@
         p {
           font-size: 1.3rem;
         }
-      }
-      .navbar-toggler {
-        background-color: rgb(189 189 189 / 66%);
-      }
-      .clickbot {
-        font-size: 15px;
-        width: 100%;
-      }
-      .aboutus {
-        color: green;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: black;
-        font-weight: 700;
-      }
-      .greendiv {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(0, 191, 99, 0.3);
-        padding: 5px 0;
-      }
-      .aboutuscontent {
-        font-size: 1.2rem;
-        text-align: center;
-        text-shadow: 1px 0.5px  4px black;
+        
+      
       }
     </style>
   </head>
@@ -282,23 +358,48 @@
         <p class="clickbot">Click Here for More</p>
       </button>
     </section>
+    
     <section id="products" class="section2">
-      <p class="aboutus">PRODUCTS</p>
-      <div class="greendiv">
-        <p class="aboutuscontent">
-          To champion global healthcare by providing cutting-edge medical
-          equipment and supplies, fostering accesibility, and enhancing the
-          well-being of communities. Committed to innovation, reliability, and
-          ethical practices, we strive to empower healthcare professionals and
-          institutions in delivering optimal patient care.
-        </p>
+      
+      <p class="aboutus2">PRODUCTS</p>
+      <div class="row">
+        <div class="col-3 offset-3">
+          <img src="img/gloves2.png" style="width: 100%;" alt="">
+          <p class="producttext">MEDICAL DISPOSABLE</p>
+        </div>
+        <div class="col-3">
+          <img src="img/tools2.png" style="width: 100%;" alt="">
+          <p class="producttext">SURGICAL INSTRUMENTS</p>
+        </div>
+      </div>
+       
       </div>
       <button class="btn-arrow" onclick="scrollToNextSection('#contact')">
         <i class="fas fa-chevron-down"></i>
         <p class="clickbot">Click Here for More</p>
       </button>
     </section>
-    <section id="contact" class="section">Section 5</section>
+    <section id="contact" class="section2">
+      <p class="aboutus">CONTACT US</p>
+      <div class="greendiv2">
+        <div class="container">
+          <div class="row mb-2">
+            <div class="col-3 text-center"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="col-6 text-center">30th Floor, RCBC Plaza Tower 1,
+              6819 Ayala Ave, Makati, 1209 Metro Manila            
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-3 text-center"><i class="fas fa-phone"></i></div>
+            <div class="col-6 text-center">02-8425-4742</div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-3 text-center"><i class="fas fa-envelope"></i></div>
+            <div class="col-6 text-center">admin@sgc.com</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
